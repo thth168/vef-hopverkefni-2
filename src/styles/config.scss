@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Lora');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
+$max-width: 1200px;
+$gutter: 20px;
+
+$font-main: 'Lora', 'Times New Roman', serif;
+$font-title: 'Roboto Mono', 'Courier New', monospace;
+$font-size-main: 16px;
+$font-size-medium: 1.5rem;
+$font-size-large: 2rem;
+$font-size-title: 3rem;
+
+$color-black: #000;
+$color-gray-dark: #999;
+$color-gray: #aaa;
+$color-gray-light: #ccc;
+$color-green-light: #2d2;
+$color-greeb-dark: #1a1;
+$color-white: #fcffd2;
+$color-tan: #cc9694;
+
+$AnimationSpeed: 300ms;
+$AnimationStyle: ease-in-out;
