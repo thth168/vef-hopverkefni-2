@@ -2,7 +2,7 @@
 
 .lecturepage {
   &__content {
-    max-width: $max-width * 0.65;
+    max-width: $max-width / 12;
     margin: $gutter;
     margin: 0 auto;
   }

@@ -12,7 +12,7 @@ export default class Header {
 
   load() {
     empty(this.container);
-    this.containerAttributes = [newAttribute('class', `${this.parentClass}__cointainer`)];
+    this.containerAttributes = [newAttribute('class', `${this.parentClass}__container`)];
     this.divElement = createElement('div', '', this.containerAttributes);
     this.categoryAttr = [newAttribute('class', `${this.parentClass}__category`)];
     this.categoryElement = createElement('p', this.category, this.categoryAttr);
