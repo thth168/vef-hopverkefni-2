@@ -2,7 +2,7 @@ import { empty, createElement, newAttribute } from './helpers';
 
 export default class Header {
   constructor(category, title, imagepath, parent) {
-    this.container = document.querySelector('.lecturepage-header');
+    this.container = document.querySelector('.lecturepage__header');
     if (parent) { this.container = parent; }
     this.category = category;
     this.title = title;
@@ -12,11 +12,11 @@ export default class Header {
 
   load() {
     empty(this.container);
-    this.categoryAttr = [newAttribute('class', `${this.parentClass}-category`)];
+    this.categoryAttr = [newAttribute('class', `${this.parentClass}__category`)];
     this.categoryElement = createElement('p', this.category, this.categoryAttr);
-    this.titleAttr = [newAttribute('class', `${this.parentClass}-title`)];
+    this.titleAttr = [newAttribute('class', `${this.parentClass}__title`)];
     this.titleElement = createElement('h1', this.title, this.titleAttr);
-    this.imageAttr = [newAttribute('src', this.imagepath), newAttribute('class', `${this.parentClass}-image`)];
+    this.imageAttr = [newAttribute('src', this.imagepath), newAttribute('class', `${this.parentClass}__image`)];
     this.imageElement = createElement('img', '', this.imageAttr);
 
     this.container.appendChild(this.categoryElement);

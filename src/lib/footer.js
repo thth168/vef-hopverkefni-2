@@ -3,12 +3,12 @@ import { empty, newAttribute, createElement } from './helpers';
 export default class Footer {
   constructor(slug) {
     this.slug = slug;
-    this.container = document.querySelector('.lecturepage-footer');
+    this.container = document.querySelector('.lecturepage__footer');
   }
 
   load() {
     empty(this.container);
-    this.finishAttr = [newAttribute('class', 'lecturepage-footer-finish')];
+    this.finishAttr = [newAttribute('class', 'footer__finish')];
     if (window.localStorage.getItem(this.slug) === 'true') {
       this.finishElement = createElement('p', '✓ Fyrirlestur kláraður', this.finishAttr);
     } else {
@@ -16,7 +16,7 @@ export default class Footer {
       this.finishElement.addEventListener('click', this.markFinished);
     }
 
-    this.backAttr = [newAttribute('class', 'lecturepage-footer-back')];
+    this.backAttr = [newAttribute('class', 'footer__back')];
     this.backElement = createElement('p', 'Til baka', this.backAttr);
     this.backElement.addEventListener('click', this.back);
     this.container.appendChild(this.finishElement);

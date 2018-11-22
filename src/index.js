@@ -3,7 +3,7 @@ import LecturesHome from './lib/lectures-home';
 
 document.addEventListener('DOMContentLoaded', () => {
   const page = document.querySelector('body');
-  const isLecturePage = page.classList.contains('lecture-page');
+  const isLecturePage = page.classList.contains('lecture__page');
 
   if (isLecturePage) {
     const lecture = new Lecture(window.location.search);

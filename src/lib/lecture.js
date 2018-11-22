@@ -18,6 +18,7 @@ export default class Lecture {
         throw new Error('Villa kom upp við að sækja síðu!!!');
       })
       .then((data) => {
+        console.log(data);
         this.displayData(data.lectures);
       })
       .catch((error) => {

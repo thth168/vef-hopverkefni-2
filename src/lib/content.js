@@ -2,74 +2,74 @@ import { empty, createElement, newAttribute } from './helpers';
 
 export default class Content {
   constructor(contentArray) {
-    this.container = document.querySelector('.lecturepage-content');
+    this.container = document.querySelector('.lecturepage__content');
     this.content = contentArray.reverse();
   }
 
   youtube(object) {
     this.data = object.data;
-    this.dataAttr = [newAttribute('src', this.data), newAttribute('class', 'lecturepage-content-youtube')];
+    this.dataAttr = [newAttribute('src', this.data), newAttribute('class', 'content__youtube')];
     this.youtubeElement = createElement('iframe', '', this.dataAttr);
 
     this.container.appendChild(this.youtubeElement);
   }
 
   text(object) {
-    this.divAttr = [newAttribute('class', 'lecturepage-content-text')];
+    this.divAttr = [newAttribute('class', 'content__text')];
     this.textDiv = createElement('div', '', this.divAttr);
     this.data = object.data.split('\n').reverse();
     while (this.data.length > 0) {
-      this.pAttr = [newAttribute('class', 'lecturepage-content-text-paragraph')];
+      this.pAttr = [newAttribute('class', 'text__paragraph')];
       this.textDiv.appendChild(createElement('p', this.data.pop(), this.pAttr));
     }
     this.container.appendChild(this.textDiv);
   }
 
   quote(object) {
-    this.divAttr = [newAttribute('class', 'lecturepage-content-quote')];
+    this.divAttr = [newAttribute('class', 'content__quote')];
     this.blockquote = createElement('blockquote', '', this.divAttr);
     this.data = object.data.split('\n').reverse();
     while (this.data.length > 0) {
-      this.pAttr = [newAttribute('class', 'lecturepage-content-quote-paragraph')];
+      this.pAttr = [newAttribute('class', 'quote__paragraph')];
       this.blockquote.appendChild(createElement('p', this.data.pop(), this.pAttr));
     }
-    this.footerAttr = [newAttribute('class', 'lecturepage-content-quote-source')];
+    this.footerAttr = [newAttribute('class', 'quote__source')];
     this.blockquote.appendChild(createElement('footer', object.attribute, this.footerAttr));
     this.container.appendChild(this.blockquote);
   }
 
   image(object) {
-    this.figAttr = [newAttribute('class', 'lecturepage-content-imageContainer')];
+    this.figAttr = [newAttribute('class', 'content__imageContainer')];
     this.figure = createElement('figure', '', this.figAttr);
-    this.imageAttr = [newAttribute('src', object.data), newAttribute('class', 'lecturepage-content-imagecontainer-image')];
+    this.imageAttr = [newAttribute('src', object.data), newAttribute('class', 'imagecontainer__image')];
     this.figure.appendChild(createElement('img', '', this.imageAttr));
-    this.captionAttr = [newAttribute('class', 'lecturepage-content-imageContainer-caption')];
+    this.captionAttr = [newAttribute('class', 'imageContainer__caption')];
     this.figure.appendChild(createElement('caption', object.caption, this.captionAttr));
     this.container.appendChild(this.figure);
   }
 
   heading(object) {
-    this.headingAttr = [newAttribute('class', 'lecturepage-content-heading')];
+    this.headingAttr = [newAttribute('class', 'content__heading')];
     this.container.appendChild(createElement('h1', object.data, this.headingAttr));
   }
 
   list(object) {
-    this.listAttr = [newAttribute('class', 'lecturepage-content-list')];
+    this.listAttr = [newAttribute('class', 'content__list')];
     this.listElement = createElement('ul', '', this.listAttr);
     this.data = object.data;
     while (this.data.length > 0) {
-      this.dataAttr = [newAttribute('class', 'lecturepage-content-list-listitem')];
+      this.dataAttr = [newAttribute('class', 'list__listitem')];
       this.listElement.appendChild(createElement('li', this.data.pop(), this.dataAttr));
     }
     this.container.appendChild(this.listElement);
   }
 
   code(object) {
-    this.divAttr = [newAttribute('class', 'lecturepage-content-code')];
+    this.divAttr = [newAttribute('class', 'content__code')];
     this.codeDiv = createElement('pre', '', this.divAttr);
     this.data = object.data.split('\n').reverse();
     while (this.data.length > 0) {
-      this.pAttr = [newAttribute('class', 'lecturepage-content-code-line')];
+      this.pAttr = [newAttribute('class', 'code__line')];
       this.codeDiv.appendChild(createElement('code', this.data.pop(), this.pAttr));
       this.codeDiv.appendChild(createElement('br'));
     }
