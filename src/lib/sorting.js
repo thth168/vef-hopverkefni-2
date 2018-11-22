@@ -9,32 +9,27 @@ export default class Sort {
     this.buttons.forEach((element) => {
       element.addEventListener('click', e => this.select(e));
     });
-
   }
 
   select(event) {
     event.preventDefault();
-    console.log(event.target.value);
     event.target.classList.toggle('selected');
     this.sortElement.classList.toggle(event.target.value);
     this.hideElements();
   }
 
   hideElements() {
-    console.log(this.sortElement.classList.contains('CSS'));
     if (this.sortElement.classList.length < 2) {
       this.list.childNodes.forEach((element) => {
         element.classList.remove('--hidden');
       });
-    }
-    else {
+    } else {
       this.list.childNodes.forEach((element) => {
         element.classList.add('--hidden');
       });
     }
     if (this.sortElement.classList.contains('css')) {
       this.css = this.list.querySelectorAll('.css');
-      console.log(this.css);
       this.css.forEach((element) => {
         element.classList.remove('--hidden');
       });

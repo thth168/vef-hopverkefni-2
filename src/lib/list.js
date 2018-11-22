@@ -36,23 +36,23 @@ export default class List {
   createCard(data) {
     this.category = data.category;
     this.title = data.title;
-    this.divAttr = [newAttribute('slug', data.slug), newAttribute('class', 'list-card')];
+    this.divAttr = [newAttribute('slug', data.slug), newAttribute('class', 'list__card')];
     this.cardDiv = createElement('div', '', this.divAttr);
     this.cardDiv.classList.add(this.category);
     if (data.thumbnail) {
       this.thumbnail = data.thumbnail;
-      this.imgAttr = [newAttribute('src', `./${this.thumbnail}`), newAttribute('class', 'list-card-image')];
+      this.imgAttr = [newAttribute('src', `./${this.thumbnail}`), newAttribute('class', 'card__image')];
       this.cardDiv.appendChild(createElement('img', '', this.imgAttr));
     }
-    this.textDivAttr = [newAttribute('class', 'list-card-text')];
+    this.textDivAttr = [newAttribute('class', 'card__text')];
     this.textDivElement = createElement('div', '', this.textDivAttr);
-    this.categoryAttr = [newAttribute('class', 'list-card-text-category')];
+    this.categoryAttr = [newAttribute('class', 'text__category')];
     this.textDivElement.appendChild(createElement('p', this.category, this.categoryAttr));
-    this.titleAttr = [newAttribute('class', 'list-card-text-title')];
+    this.titleAttr = [newAttribute('class', 'text__title')];
     this.textDivElement.appendChild(createElement('h2', this.title, this.titleAttr));
     this.cardDiv.appendChild(this.textDivElement);
     if (window.localStorage.getItem(data.slug) === 'true') {
-      this.finishAttr = [newAttribute('class', 'list-card-text-finished')];
+      this.finishAttr = [newAttribute('class', 'text__finished')];
       this.cardDiv.appendChild(createElement('p', '✓', this.finishAttr));
     }
     this.cardDiv.addEventListener('click', this.link);
