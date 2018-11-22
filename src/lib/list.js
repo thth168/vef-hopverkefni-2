@@ -38,6 +38,7 @@ export default class List {
     this.title = data.title;
     this.divAttr = [newAttribute('slug', data.slug), newAttribute('class', 'list-card')];
     this.cardDiv = createElement('div', '', this.divAttr);
+    this.cardDiv.classList.add(this.category);
     if (data.thumbnail) {
       this.thumbnail = data.thumbnail;
       this.imgAttr = [newAttribute('src', `./${this.thumbnail}`), newAttribute('class', 'list-card-image')];

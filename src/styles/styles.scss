@@ -1,4 +1,4 @@
-@import "config";
+@import 'config';
 
 * {
   padding: 0;
@@ -22,6 +22,15 @@ html { /* stylelint-disable-line */
 
 img { /* stylelint-disable-line */
   max-width: 100%;
+}
+
+.sort { //Fjarlægja þetta, bara notað í debugging
+  button {
+    background-color: slateblue;
+  }
+  .selected {
+    background-color: red;
+  }
 }
 
 // TODO import
