@@ -21,6 +21,35 @@ export default class Sort {
   }
 
   hideElements() {
-    this.sort
+    console.log(this.sortElement.classList.contains('CSS'));
+    if (this.sortElement.classList.length < 2) {
+      this.list.childNodes.forEach((element) => {
+        element.classList.remove('--hidden');
+      });
+    }
+    else {
+      this.list.childNodes.forEach((element) => {
+        element.classList.add('--hidden');
+      });
+    }
+    if (this.sortElement.classList.contains('css')) {
+      this.css = this.list.querySelectorAll('.css');
+      console.log(this.css);
+      this.css.forEach((element) => {
+        element.classList.remove('--hidden');
+      });
+    }
+    if (this.sortElement.classList.contains('html')) {
+      this.html = this.list.querySelectorAll('.html');
+      this.html.forEach((element) => {
+        element.classList.remove('--hidden');
+      });
+    }
+    if (this.sortElement.classList.contains('javascript')) {
+      this.javascript = this.list.querySelectorAll('.javascript');
+      this.javascript.forEach((element) => {
+        element.classList.remove('--hidden');
+      });
+    }
   }
 }
