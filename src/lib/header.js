@@ -2,7 +2,7 @@ import { empty, createElement, newAttribute } from './helpers';
 
 export default class Header {
   constructor(category, title, imagepath, parent) {
-    this.container = document.querySelector('.lecturepage__header');
+    this.container = document.querySelector('.header');
     if (parent) { this.container = parent; }
     this.category = category;
     this.title = title;
