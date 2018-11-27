@@ -1,0 +1,10 @@
+@import 'config';
+
+.sort {
+    text-align: center;
+
+    .button {
+        background-color: $color-gray-dark;
+        width: 100px;
+    }
+}
