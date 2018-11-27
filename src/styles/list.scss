@@ -26,7 +26,8 @@
         display: flex;
         width: 100%;
         background-color: $color-gray;
-        transition: background-color $AnimationSpeed $AnimationStyle
+        transition: background-color $AnimationSpeed $AnimationStyle;
+        font-family: $font-main;
     }
     
     .card__text:hover {
@@ -39,10 +40,20 @@
         width: 100%;
         height: auto;
         align-self: flex-end;
+        min-height: 100px;
+        
     }
 
     .text__finished {
         margin: auto;
         padding: 0 $gutter;
+        font-weight: bold;
+        font-size: 32px;
+        color: $color-green-dark;
+    }
+
+    .text_title {
+        font-weight: bold;
+        padding: 10px;
     }
 }
