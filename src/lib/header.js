@@ -18,12 +18,15 @@ export default class Header {
     this.categoryElement = createElement('p', this.category, this.categoryAttr);
     this.titleAttr = [newAttribute('class', `${this.parentClass}__title`)];
     this.titleElement = createElement('h1', this.title, this.titleAttr);
+    this.protectorAttr = [newAttribute('class', `${this.parentClass}__protector`)];
+    this.protector = createElement('div', '', this.protectorAttr);
     if (this.imagepath) {
       this.imageAttr = [newAttribute('src', this.imagepath), newAttribute('class', `${this.parentClass}__image`)];
       this.imageElement = createElement('img', '', this.imageAttr);
       this.imageElement.addEventListener('error', e => this.imgError(e));
       this.container.appendChild(this.imageElement);
     }
+    this.container.appendChild(this.protector);
     this.divElement.appendChild(this.categoryElement);
     this.divElement.appendChild(this.titleElement);
     this.container.appendChild(this.divElement);
