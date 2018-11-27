@@ -43,7 +43,7 @@ export default class List {
     this.imgDiv = createElement('div', '', this.imgDivAttr);
     if (data.thumbnail) {
       this.thumbnail = data.thumbnail;
-      this.imgAttr = [newAttribute('src', `./${this.thumbnail}`), newAttribute('class', 'card__image')];
+      this.imgAttr = [newAttribute('src', `./${this.thumbnail}`), newAttribute('class', 'image__img')];
       this.imgDiv.appendChild(createElement('img', '', this.imgAttr));
     }
     this.cardDiv.appendChild(this.imgDiv);
