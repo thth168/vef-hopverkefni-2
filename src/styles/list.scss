@@ -16,6 +16,7 @@
         display: flex;
         flex-wrap: wrap;
         max-width: 33%;
+<<<<<<< HEAD
         @include columns(4);
     }
 
@@ -27,5 +28,14 @@
             align-self: flex-end;
             text-align: bottom;
         }
+=======
+        background-color: $color-gray;
+        transition: background-color $AnimationSpeed $AnimationStyle
+>>>>>>> 88c4100058e5c853809b2ac8bd4b82126f11679b
     }
+    
+    .list__card:hover {
+        background-color: $color-gray-dark;
+    }
+
 }

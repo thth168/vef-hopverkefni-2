@@ -16,8 +16,9 @@ $color-gray-dark: #999;
 $color-gray: #aaa;
 $color-gray-light: #ccc;
 $color-green-light: #2d2;
-$color-greeb-dark: #1a1;
+$color-green-dark: #1a1;
 $color-white: #fcffd2;
+$color-white--transparent: #ffffff66;
 $color-tan: #cc9694;
 
 $AnimationSpeed: 300ms;
@@ -25,13 +26,11 @@ $AnimationStyle: ease-in-out;
 
 @mixin row() {
   display: flex;
-
   margin-right: -($gutter / 2);
   margin-left: -($gutter / 2);
 }
 
 @mixin columns($col: 1) {
-  // margföldum með "1%" til að breyta gildi í prósentu gildi
   width: ($col / 12 * 100) * 1%;
   padding-right: $gutter / 2;
   padding-left: $gutter / 2;

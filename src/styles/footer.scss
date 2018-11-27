@@ -8,6 +8,7 @@
   &__back {
     cursor: pointer;
   }
+
 }
 
 .lecturepage__footer {
@@ -26,9 +27,11 @@
       font-weight: bold;
       filter: brightness(150%);
     }
+
   }
 
   .--finished {
     color: $color-green-light;
   }
+  
 }
