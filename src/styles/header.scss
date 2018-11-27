@@ -1,0 +1,16 @@
+@import 'config';
+
+.header {
+    font-family: $font-main;
+    font-size: $font-size-title;
+    
+    .header__image {
+        position: 0 0;
+    }
+
+    .header__cointainer {
+        position: absolute;
+        margin: 100px 50%;
+        transform: translate(-50%, -50%);
+    }
+}
