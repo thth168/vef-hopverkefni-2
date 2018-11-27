@@ -3,7 +3,7 @@
 .list {
     display: flex;
     flex-wrap: wrap;
-    max-width: $max-width;
+    max-width: $max-width + $gutter;
     margin: 0 auto;
     
 
@@ -15,13 +15,23 @@
     .list__card {
         display: flex;
         flex-wrap: wrap;
-        max-width: 33%;
+        @include columns(4);
+        padding: 0 $gutter/2;
+    }
+
+    .card {
+        &__text {
+            width: 100%;
+            height:100%;
+            background-color: $color-gray;
+            align-self: flex-end;
+            text-align: bottom;
+            &:hover {
+                background-color: $color-gray-dark;
+            }
+        }
         background-color: $color-gray;
         transition: background-color $AnimationSpeed $AnimationStyle
-    }
-    
-    .list__card:hover {
-        background-color: $color-gray-dark;
     }
 
 }
