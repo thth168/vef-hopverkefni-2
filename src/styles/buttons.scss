@@ -3,8 +3,19 @@
 .sort {
     text-align: center;
 
-    .button {
-        background-color: $color-gray-dark;
-        width: 100px;
+    button {
+        background-color: $color-gray-light;
+        margin: 2em 1em;
+        padding: 1em;
+        border: none;
+        font-size: 1.5em;
+        size: 100px;
+        border-radius: 1em;
+
     }
+    
+    .selected {
+        background-color: $color-green-light;
+    }
+
 }
