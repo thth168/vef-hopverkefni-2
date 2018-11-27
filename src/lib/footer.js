@@ -11,6 +11,7 @@ export default class Footer {
     this.finishAttr = [newAttribute('class', 'footer__finish')];
     if (window.localStorage.getItem(this.slug) === 'true') {
       this.finishElement = createElement('p', '✓ Fyrirlestur kláraður', this.finishAttr);
+      this.finishElement.classList.add('--finished');
     } else {
       this.finishElement = createElement('p', 'Klára fyrirlestur', this.finishAttr);
       this.finishElement.addEventListener('click', this.markFinished);
@@ -28,6 +29,7 @@ export default class Footer {
     this.slug = this.USP.get('slug');
     window.localStorage.setItem(this.slug, 'true');
     e.currentTarget.textContent = '✓ Fyrirlestur kláraður';
+    e.currentTarget.classList.add('--finished');
   }
 
   back() {

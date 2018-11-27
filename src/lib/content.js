@@ -8,10 +8,13 @@ export default class Content {
 
   youtube(object) {
     this.data = object.data;
-    this.dataAttr = [newAttribute('src', this.data), newAttribute('class', 'content__youtube')];
+    this.youtubeDivAttr = [newAttribute('class', 'content__youtube')];
+    this.youtubeDivElement = createElement('div', '', this.youtubeDivAttr);
+    this.dataAttr = [newAttribute('allowfullscreen', '0'), newAttribute('frameborder', '0'), newAttribute('src', this.data)];
     this.youtubeElement = createElement('iframe', '', this.dataAttr);
 
-    this.container.appendChild(this.youtubeElement);
+    this.youtubeDivElement.appendChild(this.youtubeElement);
+    this.container.appendChild(this.youtubeDivElement);
   }
 
   text(object) {
@@ -41,8 +44,13 @@ export default class Content {
   image(object) {
     this.figAttr = [newAttribute('class', 'content__imageContainer')];
     this.figure = createElement('figure', '', this.figAttr);
-    this.imageAttr = [newAttribute('src', object.data), newAttribute('class', 'imagecontainer__image')];
-    this.figure.appendChild(createElement('img', '', this.imageAttr));
+    this.imageDivAttr = [newAttribute('class', 'imageContainer__container')];
+    this.imageDiv = createElement('div', '', this.imageDivAttr);
+    this.imageAttr = [newAttribute('src', object.data), newAttribute('class', 'imageContainer__image')];
+    this.protectorAttr = [newAttribute('class', 'imageContainer__protector')];
+    this.imageDiv.appendChild(createElement('img', '', this.imageAttr));
+    this.imageDiv.appendChild(createElement('div', '', this.protectorAttr));  
+    this.figure.appendChild(this.imageDiv);
     this.captionAttr = [newAttribute('class', 'imageContainer__caption')];
     this.figure.appendChild(createElement('caption', object.caption, this.captionAttr));
     this.container.appendChild(this.figure);

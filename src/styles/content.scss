@@ -1,9 +1,114 @@
-@import 'config';
+@import './config.scss';
 
 .lecturepage {
   &__content {
-    max-width: $max-width / 12;
-    margin: $gutter;
+    @include columns(12);
+    display: flex;
+    max-width: $max-width +2 * $gutter;
     margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+
+    > * {
+      @include columns(12);
+      @media (min-width: 800px) {
+        @include columns(8);
+      }
+      margin: $gutter 0;
+      font-family: $font-main;
+      font-size: $font-size-main;
+    }
+
+    .content {
+      &__youtube {
+        position: relative;
+        max-width: 100%;
+        padding-top: 56.25%;
+        padding-right: 0;
+        padding-left: 0;
+        > * {
+          position: absolute;
+          top: 0;
+          left: 2%;
+          width: 96%;
+          height: 100%;
+          border: hidden;
+        }
+      }
+
+      &__text {
+
+        > * {
+          margin: $gutter 0;
+        }
+      }
+
+      &__quote {
+        padding-top: $gutter;
+        padding-bottom: $gutter;
+        background-color: $color-gray;
+
+      }
+
+      &__imageContainer {
+        display: flex;
+        height: auto;
+        flex-direction: column;
+      }
+
+      &__heading {
+        margin-bottom: 0;
+        font-family: $font-title;
+        font-size: $font-size-large;
+      }
+
+      &__list {
+        > * {
+          margin: $gutter/2 0;
+        }
+      }
+
+      &__code {
+        > * {
+          font-family: $font-title;
+          font-weight: bold;
+        }
+      }
+
+      &__loading {
+        text-align: center;
+      }
+    }
+
+    .quote__source {
+      margin-top: $gutter / 2;
+      font-style: italic;
+    }
+
+    .imageContainer {
+      &__container {
+        display: block;
+        position: relative;
+        height: auto;
+      }
+
+      &__protector {
+        background-color: $color-white;
+      }
+
+      &__caption {
+        margin-top: $gutter / 2;
+        font-style: italic;
+        text-align: left;
+      }
+
+      &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+      }
+    }
   }
 }

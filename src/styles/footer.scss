@@ -1,0 +1,34 @@
+@import './config.scss';
+
+.footer {
+  &__finish {
+    cursor: pointer;
+  }
+
+  &__back {
+    cursor: pointer;
+  }
+}
+
+.lecturepage__footer {
+  display: flex;
+  margin: $gutter;
+  font-family: $font-title;
+  flex-direction: column;
+  align-items: center;
+
+  > * {
+    margin: $gutter / 2 0;
+    transition: filter, $AnimationSpeed;
+    transition-timing-function: $AnimationStyle;
+
+    &:hover {
+      font-weight: bold;
+      filter: brightness(150%);
+    }
+  }
+
+  .--finished {
+    color: $color-green-light;
+  }
+}

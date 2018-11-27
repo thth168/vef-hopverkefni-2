@@ -24,15 +24,7 @@ img { /* stylelint-disable-line */
   max-width: 100%;
 }
 
-.sort { //Fjarlægja þetta, bara notað í debugging
-  button {
-    background-color: slateblue;
-  }
-  .selected {
-    background-color: red;
-  }
-}
-
 // TODO import
-@import 'list';
-@import 'content';
+@import './list.scss';
+@import './content.scss';
+@import './footer.scss';
