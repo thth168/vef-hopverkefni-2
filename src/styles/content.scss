@@ -14,7 +14,7 @@
       @media (min-width: 800px) {
         @include columns(8);
       }
-      
+
       margin: $gutter 0;
       font-family: $font-main;
       font-size: $font-size-main;
