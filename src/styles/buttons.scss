@@ -1,10 +1,5 @@
 @import 'config';
 
-@keyframes to_dark_green {
-    from {background-color: $color-green-light;}
-    to {background-color: $color-green-dark;}
-}
-
 .sort {
     text-align: center;
 
@@ -17,7 +12,6 @@
         size: 100px;
         border-radius: 1em;
         transition: background-color $AnimationSpeed $AnimationStyle;
-
     }
 
     button:hover {
