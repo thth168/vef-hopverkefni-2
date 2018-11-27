@@ -1,0 +1,30 @@
+@import 'config';
+
+.sort {
+    text-align: center;
+
+    button {
+        background-color: $color-gray-light;
+        margin: 2em 1em;
+        padding: 1em;
+        border: none;
+        font-size: 1.5em;
+        size: 100px;
+        border-radius: 1em;
+        transition: background-color $AnimationSpeed $AnimationStyle;
+    }
+
+    button:hover {
+        background-color: $color-gray-dark;
+    }
+    
+    .selected {
+        background-color: $color-green-light;
+        transition: background-color $AnimationSpeed $AnimationStyle;
+    }
+
+    .selected:hover {
+        background-color: $color-green-dark;
+    }
+
+}
