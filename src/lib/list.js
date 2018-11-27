@@ -38,23 +38,32 @@ export default class List {
     this.title = data.title;
     this.divAttr = [newAttribute('slug', data.slug), newAttribute('class', 'list__card')];
     this.cardDiv = createElement('div', '', this.divAttr);
+    this.imgDivAttr = [newAttribute('class', 'card__image')];
     this.cardDiv.classList.add(this.category);
+    this.imgDiv = createElement('div', '', this.imgDivAttr);
     if (data.thumbnail) {
       this.thumbnail = data.thumbnail;
       this.imgAttr = [newAttribute('src', `./${this.thumbnail}`), newAttribute('class', 'card__image')];
-      this.cardDiv.appendChild(createElement('img', '', this.imgAttr));
+      this.imgDiv.appendChild(createElement('img', '', this.imgAttr));
     }
-    this.textDivAttr = [newAttribute('class', 'card__text')];
-    this.textDivElement = createElement('div', '', this.textDivAttr);
-    this.categoryAttr = [newAttribute('class', 'text__category')];
-    this.textDivElement.appendChild(createElement('p', this.category, this.categoryAttr));
+    this.cardDiv.appendChild(this.imgDiv);
+
+    this.containerDivAttr = [newAttribute('class', 'text__container')];
+    this.textDivAttr = [newAttribute('class', 'container__text')];
     this.titleAttr = [newAttribute('class', 'text__title')];
-    this.textDivElement.appendChild(createElement('h2', this.title, this.titleAttr));
-    this.cardDiv.appendChild(this.textDivElement);
+    this.categoryAttr = [newAttribute('class', 'text__category')];
+
+    this.containerDiv = createElement('div', '', this.containerDivAttr);
+    this.textDiv = createElement('div', '', this.textDivAttr);
+    this.textDiv.appendChild(createElement('p', this.category, this.categoryAttr));
+    this.textDiv.appendChild(createElement('h2', this.title, this.titleAttr));
+    this.containerDiv.appendChild(this.textDiv);
+
     if (window.localStorage.getItem(data.slug) === 'true') {
       this.finishAttr = [newAttribute('class', 'text__finished')];
-      this.cardDiv.appendChild(createElement('p', '✓', this.finishAttr));
+      this.containerDiv.appendChild(createElement('p', '✓', this.finishAttr));
     }
+    this.cardDiv.appendChild(this.containerDiv);
     this.cardDiv.addEventListener('click', this.link);
     return this.cardDiv;
   }
