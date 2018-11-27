@@ -3,7 +3,7 @@
 .list {
     display: flex;
     flex-wrap: wrap;
-    max-width: $max-width;
+    max-width: $max-width + $gutter;
     margin: 0 auto;
     
 
@@ -15,8 +15,8 @@
     .list__card {
         display: flex;
         flex-wrap: wrap;
-        max-width: 33%;
         @include columns(4);
+        padding: 0 $gutter/2;
     }
 
     .card {
