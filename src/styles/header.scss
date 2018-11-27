@@ -1,0 +1,21 @@
+@import 'config';
+
+.header {
+    font-family: $font-main;
+    font-size: $font-size-title;
+    position: relative;
+    text-align: center;
+    max-height: 300px;
+    overflow: hidden;
+
+    .header__image {
+        overflow: hidden;
+    }
+
+    .header__container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
