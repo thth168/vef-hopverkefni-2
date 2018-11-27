@@ -1,5 +1,10 @@
 @import 'config';
 
+@keyframes to_dark_green {
+    from {background-color: $color-green-light;}
+    to {background-color: $color-green-dark;}
+}
+
 .sort {
     text-align: center;
 
@@ -11,11 +16,21 @@
         font-size: 1.5em;
         size: 100px;
         border-radius: 1em;
+        transition: background-color $AnimationSpeed $AnimationStyle;
 
+    }
+
+    button:hover {
+        background-color: $color-gray-dark;
     }
     
     .selected {
         background-color: $color-green-light;
+        transition: background-color $AnimationSpeed $AnimationStyle;
+    }
+
+    .selected:hover {
+        background-color: $color-green-dark;
     }
 
 }
