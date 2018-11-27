@@ -1,17 +1,23 @@
 @import './config.scss';
 
 .list {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: $max-width + $gutter;
+  margin: 0 auto;
+
+  .--hidden {
+    display: none;
+  }
+
+  .list__card {
     display: flex;
     flex-wrap: wrap;
-    max-width: $max-width + $gutter;
-    margin: 0 auto;
-    
+    @include columns(4);
+    padding: 0 $gutter/2;
+}
 
-
-    .--hidden {
-        display: none;
-    }
-
+<<<<<<< HEAD
     .list__card {
         display: flex;
         flex-wrap: wrap;
@@ -34,4 +40,21 @@
         background-color: $color-gray-dark;
     }
 
+=======
+  .card {
+    &__text {
+      width: 100%;
+      height: 100%;
+      text-align: bottom;
+      background-color: $color-gray;
+      align-self: flex-end;
+
+      &:hover {
+        background-color: $color-gray-dark;
+      }
+    }
+    background-color: $color-gray;
+    transition: background-color $AnimationSpeed $AnimationStyle
+  }
+>>>>>>> 5637a357a5eea53765723fa1339475d84c3f20c0
 }

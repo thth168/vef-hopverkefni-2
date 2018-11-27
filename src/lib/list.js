@@ -48,8 +48,8 @@ export default class List {
     }
     this.cardDiv.appendChild(this.imgDiv);
 
-    this.containerDivAttr = [newAttribute('class', 'text__container')];
-    this.textDivAttr = [newAttribute('class', 'container__text')];
+    this.containerDivAttr = [newAttribute('class', 'card__text')];
+    this.textDivAttr = [newAttribute('class', 'text__container')];
     this.titleAttr = [newAttribute('class', 'text__title')];
     this.categoryAttr = [newAttribute('class', 'text__category')];
 
