@@ -16,11 +16,12 @@
     }
     
     .image__img {
-        height: 100%;
+        height: auto;
     }
 
     .card__image {
         margin: 0 auto;
+        flex-grow: 1;
         width: 100%;
         background-color: $color-gray;
     }
@@ -32,6 +33,7 @@
     .card__text {
         display: flex;
         width: 100%;
+        height: auto;
         background-color: $color-gray;
         transition: background-color $AnimationSpeed $AnimationStyle;
         font-family: $font-main;
@@ -47,8 +49,7 @@
         width: 100%;
         height: auto;
         align-self: flex-end;
-        min-height: 100px;
-        
+        padding: $gutter;
     }
 
     .text__finished {
@@ -60,8 +61,8 @@
         color: $color-green-dark;
     }
 
-    .text_title {
+    .text__title {
         font-weight: bold;
-        padding: 10px;
+        margin-top: $gutter /2;
     }
 }

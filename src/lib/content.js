@@ -49,7 +49,7 @@ export default class Content {
     this.imageAttr = [newAttribute('src', object.data), newAttribute('class', 'imageContainer__image')];
     this.protectorAttr = [newAttribute('class', 'imageContainer__protector')];
     this.imageDiv.appendChild(createElement('img', '', this.imageAttr));
-    this.imageDiv.appendChild(createElement('div', '', this.protectorAttr));  
+    this.imageDiv.appendChild(createElement('div', '', this.protectorAttr));
     this.figure.appendChild(this.imageDiv);
     this.captionAttr = [newAttribute('class', 'imageContainer__caption')];
     this.figure.appendChild(createElement('caption', object.caption, this.captionAttr));
