@@ -3,14 +3,19 @@
 .header {
     font-family: $font-main;
     font-size: $font-size-title;
-    
+    position: relative;
+    text-align: center;
+    max-height: 300px;
+    overflow: hidden;
+
     .header__image {
-        position: 0 0;
+        overflow: hidden;
     }
 
-    .header__cointainer {
+    .header__container {
         position: absolute;
-        margin: 100px 50%;
+        top: 50%;
+        left: 50%;
         transform: translate(-50%, -50%);
     }
 }
