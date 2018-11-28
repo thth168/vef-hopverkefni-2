@@ -26,10 +26,6 @@
       background-color: $color-gray;
       transition: background-color $AnimationSpeed $AnimationStyle;
     }
-
-    .image__img {
-      height: auto;
-    }
   }
 
   &__card {
@@ -73,6 +69,13 @@
 
     &__title {
       font-weight: bold;
+    }
+  }
+
+  .image {
+    &__img {
+      width: 100%;
+      height: auto;
     }
   }
 
