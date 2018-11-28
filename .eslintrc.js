@@ -6,7 +6,8 @@ module.exports = {
   rules: {
     'no-console': ['error', { allow: ['info', 'warn', 'error'] }],
     'class-methods-use-this': 0,
-    'linebreak-style': ["error", "windows"]
+    'linebreak-style': ["error", "windows"],
+    'max-depth': 10,
   },
   plugins: ['import'],
 };

@@ -7,26 +7,6 @@
   padding: 0 $gutter/2;
   margin: 0 auto 8*$gutter auto;
 
-  &__card {
-    display: flex;
-    padding: 0 $gutter/2;
-    margin-bottom: $gutter;
-    flex-direction: column;
-    flex-wrap: wrap;
-    @include columns(4);
-    @media (max-width: 1200px) {
-      @include columns(6);
-    }
-    @media (max-width: 800px) {
-      @include columns(12);
-    }
-
-    &:hover > * {
-      cursor: pointer;
-      background-color: $color-gray-dark;
-    }
-  }
-
   .card {
     &__text {
       display: flex;
@@ -49,6 +29,26 @@
 
     .image__img {
       height: auto;
+    }
+  }
+
+  &__card {
+    display: flex;
+    padding: 0 $gutter/2;
+    margin-bottom: $gutter;
+    flex-direction: column;
+    flex-wrap: wrap;
+    @include columns(4);
+    @media (max-width: 1200px) {
+      @include columns(6);
+    }
+    @media (max-width: 800px) {
+      @include columns(12);
+    }
+
+    &:hover > * {
+      cursor: pointer;
+      background-color: $color-gray-dark;
     }
   }
 
