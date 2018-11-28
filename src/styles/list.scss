@@ -17,8 +17,7 @@
             font-family: $font-title;
             font-size: 1.25rem;
             background-color: $color-gray;
-            
-            
+            transition: background-color $AnimationSpeed $AnimationStyle;
         }
         
         &__image {
@@ -26,27 +25,27 @@
             flex-grow: 1;
             width: 100%;
             background-color: $color-gray;
+            transition: background-color $AnimationSpeed $AnimationStyle;
         }
         
         .image__img {
             height: auto;
         }
     }
-        &__card {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            @include columns(4);
-            padding: 0 $gutter/2;
-            margin-bottom: $gutter;
-    
-            &:hover > * {
-                cursor: pointer;
-                transition: background-color $AnimationSpeed $AnimationStyle;
-                background-color: $color-gray-dark;
-            }
-    
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        @include columns(4);
+        padding: 0 $gutter/2;
+        margin-bottom: $gutter;
+
+        &:hover > * {
+            cursor: pointer;
+            background-color: $color-gray-dark;
         }
+    }
 
     .text {
         &__category {
