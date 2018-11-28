@@ -4,14 +4,15 @@
   text-align: center;
 
   .Button {
-    padding: $gutter;
-    margin: $gutter $gutter;
-    font-family: $font-main;
-    font-size: $font-size-main;
+    padding: $gutter/2 $gutter;
+    margin: 2*$gutter $gutter;
+    font-family: $font-title;
+    font-size: $font-size-medium;
+    font-weight: bold;
     cursor: pointer;
     background-color: $color-gray-light;
     border: 0;
-    border-radius: 1em;
+    border-radius: 1rem;
     transition: background-color $AnimationSpeed $AnimationStyle;
 
     &:hover {

@@ -1,12 +1,16 @@
 @import 'config';
 
 .header {
-    font-family: $font-main;
-    font-size: $font-size-title;
+    font-family: $font-title;
+    font-size: $font-size-main;
     position: relative;
     text-align: center;
     max-height: 300px;
     overflow: hidden;
+
+    &__title {
+        font-size: $font-size-title;
+    }
 
     &__image {
         overflow: hidden;

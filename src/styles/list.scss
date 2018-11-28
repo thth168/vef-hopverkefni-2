@@ -4,7 +4,7 @@
     display: flex;
     flex-wrap: wrap;
     max-width: $max-width + 2 * $gutter;
-    padding: $gutter / 2;
+    padding: 0 $gutter/2;
     margin: 0 auto;
 
     &__card {
@@ -15,21 +15,12 @@
         padding: 0 $gutter/2;
         margin-bottom: $gutter;
 
-    }
-    
-    .image__img {
-        height: auto;
-    }
+        &:hover > * {
+            transition: background-color $AnimationSpeed $AnimationStyle;
+            background-color: $color-gray-dark;
+            cursor: pointer;
+        }
 
-    .card__image {
-        margin: 0 auto;
-        flex-grow: 1;
-        width: 100%;
-        background-color: $color-gray;
-    }
-
-    .--hidden {
-        display: none;
     }
 
     .card {
@@ -39,13 +30,27 @@
             height: auto;
             background-color: $color-gray;
             padding: $gutter / 2;
-            font-family: $font-main;
-
+            font-family: $font-title;
+            font-size: 1.25rem;
         }
 
+        &__image {
+            margin: 0 auto;
+            flex-grow: 1;
+            width: 100%;
+            background-color: $color-gray;
+        }
+
+        &image__img {
+            height: auto;
+        }
     }
 
     .text {
+        &__category {
+            text-transform: uppercase;
+        }
+
         &__container {
             display: flex;
             flex-direction: column;
@@ -63,17 +68,9 @@
         &__title {
             font-weight: bold;
         }
-
-        &__category {
-            text-transform: uppercase;
-        }
     }
 
-    .list__card:hover > * {
-        transition: background-color $AnimationSpeed $AnimationStyle;
-        background-color: $color-gray-dark;
-
-        cursor: pointer;
+    .--hidden {
+        display: none;
     }
-
 }
