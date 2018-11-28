@@ -7,44 +7,46 @@
     padding: 0 $gutter/2;
     margin: 0 auto;
 
-    &__card {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        @include columns(4);
-        padding: 0 $gutter/2;
-        margin-bottom: $gutter;
-
-        &:hover > * {
-            transition: background-color $AnimationSpeed $AnimationStyle;
-            background-color: $color-gray-dark;
-            cursor: pointer;
-        }
-
-    }
-
+    
     .card {
         &__text {
             display: flex;
             width: 100%;
             height: auto;
-            background-color: $color-gray;
             padding: $gutter / 2;
             font-family: $font-title;
             font-size: 1.25rem;
+            background-color: $color-gray;
+            
+            
         }
-
+        
         &__image {
             margin: 0 auto;
             flex-grow: 1;
             width: 100%;
             background-color: $color-gray;
         }
-
-        &image__img {
+        
+        .image__img {
             height: auto;
         }
     }
+        &__card {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            @include columns(4);
+            padding: 0 $gutter/2;
+            margin-bottom: $gutter;
+    
+            &:hover > * {
+                cursor: pointer;
+                transition: background-color $AnimationSpeed $AnimationStyle;
+                background-color: $color-gray-dark;
+            }
+    
+        }
 
     .text {
         &__category {
