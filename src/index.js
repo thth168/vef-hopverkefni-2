@@ -2,15 +2,14 @@ import Lecture from './lib/lecture';
 import LecturesHome from './lib/lectures-home';
 
 function removeGrid(e) {
-  if(e.key === 'V') {
+  if (e.key === 'V') {
     const grid = document.getElementById('grid');
-    if(grid.disabled) {
+    if (grid.disabled) {
       grid.disabled = false;
-    }
-    else grid.disabled = true;
+    } else grid.disabled = true;
   }
 
-  if(e.key === 'B') {
+  if (e.key === 'B') {
     localStorage.clear();
   }
 }

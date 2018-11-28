@@ -1,9 +1,19 @@
+/**
+ * Tæmir elementið sem er gefið
+ * @param {*} element
+ */
 export function empty(element) {
   while (element.firstChild) {
     element.removeChild(element.firstChild);
   }
 }
 
+/**
+ * Smíðar element
+ * @param {*} type
+ * @param {*} value
+ * @param  {...any} attributes
+ */
 export function createElement(type, value, ...attributes) {
   const ele = document.createElement(type);
   if (value && value !== '') {
@@ -21,12 +31,23 @@ export function createElement(type, value, ...attributes) {
   return ele;
 }
 
+/**
+ * Function sem býr til attribute
+ * @param {*} type
+ * @param {*} value
+ */
+
 export function Attr(type, value) {
   const attr = document.createAttribute(type);
   attr.value = value;
 
   return attr;
 }
+
+/**
+ * Function sem sýnir error message
+ * @param {*} error
+ */
 
 export function errorDisplay(error) {
   // betri villu meðhöndlun

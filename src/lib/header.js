@@ -1,5 +1,14 @@
 import { empty, createElement, Attr } from './helpers';
 
+/**
+ * Hlutur sem sér um að smíða header á síðunni
+ *
+ * @param {category} String category
+ * @param {title} String title
+ * @param {imagepath} String imagepath
+ * @param {parent} Object parent
+ */
+
 export default class Header {
   constructor(category, title, imagepath, parent) {
     this.container = document.querySelector('.header');
@@ -9,6 +18,10 @@ export default class Header {
     this.imagepath = imagepath;
     this.parentClass = this.container.classList.value;
   }
+
+  /**
+   * Function sem sér um að hlaða inn hlutunum
+   */
 
   load() {
     empty(this.container);
