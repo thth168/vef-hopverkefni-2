@@ -4,19 +4,24 @@ export function empty(element) {
   }
 }
 
-export function createElement(type, value, attributes) {
+export function createElement(type, value, ...attributes) {
   const ele = document.createElement(type);
   if (value && value !== '') {
     ele.appendChild(document.createTextNode(value));
   }
 
-  while (attributes && attributes.length > 0) {
-    ele.setAttributeNode(attributes.pop());
+  if (Array.isArray(attributes)) {
+    attributes.forEach((attribute) => {
+      ele.setAttributeNode(attribute);
+    });
   }
+  // while (attributes && attributes.length > 0) {
+  //   ele.setAttributeNode(attributes.pop());
+  // }
   return ele;
 }
 
-export function newAttribute(type, value) {
+export function Attr(type, value) {
   const attr = document.createAttribute(type);
   attr.value = value;
 

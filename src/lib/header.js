@@ -1,4 +1,4 @@
-import { empty, createElement, newAttribute } from './helpers';
+import { empty, createElement, Attr } from './helpers';
 
 export default class Header {
   constructor(category, title, imagepath, parent) {
@@ -12,17 +12,12 @@ export default class Header {
 
   load() {
     empty(this.container);
-    this.containerAttributes = [newAttribute('class', `${this.parentClass}__container`)];
-    this.divElement = createElement('div', '', this.containerAttributes);
-    this.categoryAttr = [newAttribute('class', `${this.parentClass}__category`)];
-    this.categoryElement = createElement('p', this.category, this.categoryAttr);
-    this.titleAttr = [newAttribute('class', `${this.parentClass}__title`)];
-    this.titleElement = createElement('h1', this.title, this.titleAttr);
-    this.protectorAttr = [newAttribute('class', `${this.parentClass}__protector`)];
-    this.protector = createElement('div', '', this.protectorAttr);
+    this.divElement = createElement('div', '', Attr('class', `${this.parentClass}__container`));
+    this.categoryElement = createElement('p', this.category, Attr('class', `${this.parentClass}__category`));
+    this.titleElement = createElement('h1', this.title, Attr('class', `${this.parentClass}__title`));
+    this.protector = createElement('div', '', Attr('class', `${this.parentClass}__protector`));
     if (this.imagepath) {
-      this.imageAttr = [newAttribute('src', this.imagepath), newAttribute('class', `${this.parentClass}__image`)];
-      this.imageElement = createElement('img', '', this.imageAttr);
+      this.imageElement = createElement('img', '', Attr('class', `${this.parentClass}__image`), Attr('src', this.imagepath), Attr('alt', 'Banner Image'));
       this.imageElement.addEventListener('error', e => this.imgError(e));
       this.container.appendChild(this.imageElement);
     }
@@ -35,6 +30,6 @@ export default class Header {
   imgError(event) {
     event.preventDefault();
     event.target.removeAttributeNode(event.target.getAttributeNode('src'));
-    event.target.setAttributeNode(newAttribute('src', './img/header.jpg'));
+    event.target.setAttributeNode(Attr('src', './img/header.jpg'));
   }
 }

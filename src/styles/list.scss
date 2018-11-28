@@ -3,7 +3,8 @@
 .list {
     display: flex;
     flex-wrap: wrap;
-    max-width: $max-width + $gutter;
+    max-width: $max-width + 2 * $gutter;
+    padding: $gutter / 2;
     margin: 0 auto;
 
     &__card {
@@ -13,6 +14,7 @@
         @include columns(4);
         padding: 0 $gutter/2;
         margin-bottom: $gutter;
+
     }
     
     .image__img {
@@ -34,14 +36,11 @@
         &__text {
             display: flex;
             width: 100%;
+            height: auto;
             background-color: $color-gray;
-            transition: background-color $AnimationSpeed $AnimationStyle;
+            padding: $gutter / 2;
             font-family: $font-main;
-            
-            &:hover {
-                background-color: $color-gray-dark;
-            }
-            
+
         }
 
     }
@@ -50,14 +49,11 @@
         &__container {
             display: flex;
             flex-direction: column;
-            width: 100%;
-            height: auto;
-            align-self: flex-end;
-            min-height: 100px;
+            flex-grow: 1;
+            height: 100%;
         }
 
         &__finished {
-            margin: auto;
             padding: 0 $gutter;
             font-weight: bold;
             font-size: 32px;
@@ -68,6 +64,16 @@
             font-weight: bold;
         }
 
+        &__category {
+            text-transform: uppercase;
+        }
+    }
+
+    .list__card:hover > * {
+        transition: background-color $AnimationSpeed $AnimationStyle;
+        background-color: $color-gray-dark;
+
+        cursor: pointer;
     }
 
 }

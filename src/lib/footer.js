@@ -1,4 +1,4 @@
-import { empty, newAttribute, createElement } from './helpers';
+import { empty, Attr, createElement } from './helpers';
 
 export default class Footer {
   constructor(slug) {
@@ -8,18 +8,16 @@ export default class Footer {
 
   load() {
     empty(this.container);
-    this.finishAttr = [newAttribute('class', 'footer__finish')];
     if (window.localStorage.getItem(this.slug) === 'true') {
-      this.finishElement = createElement('p', '✓ Fyrirlestur kláraður', this.finishAttr);
+      this.finishElement = createElement('p', '✓ Fyrirlestur kláraður', Attr('class', 'footer__finish'));
       this.finishElement.classList.add('--finished');
     } else {
-      this.finishElement = createElement('p', 'Klára fyrirlestur', this.finishAttr);
+      this.finishElement = createElement('p', 'Klára fyrirlestur', Attr('class', 'footer__finish'));
       this.finishElement.addEventListener('click', this.markFinished);
     }
 
-    this.backAttr = [newAttribute('class', 'footer__back')];
-    this.backElement = createElement('p', 'Til baka', this.backAttr);
-    this.backElement.addEventListener('click', this.back);
+    this.backElement = createElement('a', 'Til baka', Attr('class', 'footer__back'), Attr('href', './'));
+    // this.backElement.addEventListener('click', this.back);
     this.container.appendChild(this.finishElement);
     this.container.appendChild(this.backElement);
   }

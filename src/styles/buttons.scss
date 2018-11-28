@@ -1,32 +1,31 @@
 @import 'config';
 
 .sort {
-    text-align: center;
+  text-align: center;
 
-    button {
-        background-color: $color-gray-light;
-        margin: 2em 1em;
-        padding: 1em;
-        border: none;
-        font-size: 1.5em;
-        size: 100px;
-        border-radius: 1em;
-        transition: background-color $AnimationSpeed $AnimationStyle;
+  .Button {
+    padding: $gutter;
+    margin: $gutter $gutter;
+    font-family: $font-main;
+    font-size: $font-size-main;
+    cursor: pointer;
+    background-color: $color-gray-light;
+    border: 0;
+    border-radius: 1em;
+    transition: background-color $AnimationSpeed $AnimationStyle;
 
-        &:hover {
-            background-color: $color-gray-dark;
-        }
-
-    }
-    
-    .selected {
-        background-color: $color-green-light;
-        transition: background-color $AnimationSpeed $AnimationStyle;
-        
-        &:hover {
-            background-color: $color-green-dark;
-        }
-
+    &:hover {
+      background-color: $color-gray-dark;
     }
 
+  }
+
+  .selected {
+    background-color: $color-green-light;
+    transition: background-color $AnimationSpeed $AnimationStyle;
+
+    &:hover {
+      background-color: $color-green-dark;
+    }
+  }
 }

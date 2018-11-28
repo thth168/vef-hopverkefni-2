@@ -19,7 +19,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: $color-white--transparent;
+        background-color: unquote($color-white--transparent);
     }
 
     &__container {
@@ -29,4 +29,7 @@
         transform: translate(-50%, -50%);
     }
 
+    &__category {
+        text-transform: uppercase;
+    }
 }
