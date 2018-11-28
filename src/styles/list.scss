@@ -5,7 +5,7 @@
     flex-wrap: wrap;
     max-width: $max-width + 2 * $gutter;
     padding: 0 $gutter/2;
-    margin: 0 auto;
+    margin: 0 auto 8*$gutter auto;
 
     
     .card {
