@@ -95,10 +95,14 @@ export default class Content {
   image(object) {
     this.figure = createElement('figure', '', Attr('class', 'content__imageContainer'));
     this.imageDiv = createElement('div', '', Attr('class', 'imageContainer__container'));
-    this.imageDiv.appendChild(createElement('img', '', Attr('src', object.data), Attr('class', 'imageContainer__image'), Attr('aria-labelledby', object.caption.split(' ')[0])));
+    this.ariaLabel = 'undefined';
+    if(object.caption) {
+      this.ariaLabel = object.caption.split(' ')[0];
+    }
+    this.imageDiv.appendChild(createElement('img', '', Attr('src', object.data), Attr('class', 'imageContainer__image'), Attr('aria-labelledby', this.ariaLabel)));
     this.imageDiv.appendChild(createElement('div', '', Attr('class', 'imageContainer__protector')));
     this.figure.appendChild(this.imageDiv);
-    this.figure.appendChild(createElement('label', object.caption, Attr('class', 'imageContainer__caption'), Attr('id', object.caption.split(' ')[0])));
+    this.figure.appendChild(createElement('label', object.caption, Attr('class', 'imageContainer__caption'), Attr('id', this.ariaLabel)));
     this.container.appendChild(this.figure);
   }
 

@@ -2,10 +2,11 @@
 
 .list {
   display: flex;
-  flex-wrap: wrap;
   max-width: $max-width + 2 * $gutter;
   padding: 0 $gutter/2;
-  margin: 0 auto 8*$gutter auto;
+  margin: 0 auto 2*$gutter auto;
+  background-color: $color-white;
+  flex-wrap: wrap;
 
   .card {
     &__text {
