@@ -30,8 +30,7 @@ export default class Content {
   youtube(object) {
     this.data = object.data;
     this.youtubeDivElement = createElement('div', '', Attr('class', 'content__youtube'));
-    this.youtubeElement = createElement('iframe', '', Attr('allowfullscreen', '0'), Attr('frameborder', '0'), Attr('src', this.data), Attr('title', 'Myndband tengt fyrirlestri'));
-
+    this.youtubeElement = createElement('iframe', '', Attr('allowfullscreen', '0'), Attr('frameborder', '0'), Attr('src', this.data), Attr('title', `Myndband tengt fyrirlestri = ${this.data}`));
     this.youtubeDivElement.appendChild(this.youtubeElement);
     this.container.appendChild(this.youtubeDivElement);
   }
@@ -99,10 +98,10 @@ export default class Content {
     if(object.caption) {
       this.ariaLabel = object.caption.split(' ')[0];
     }
-    this.imageDiv.appendChild(createElement('img', '', Attr('src', object.data), Attr('class', 'imageContainer__image'), Attr('aria-labelledby', this.ariaLabel)));
+    this.imageDiv.appendChild(createElement('img', '', Attr('src', object.data), Attr('class', 'imageContainer__image'), Attr('aria-labelledby', `${this.ariaLabel}-${object.data}`)));
     this.imageDiv.appendChild(createElement('div', '', Attr('class', 'imageContainer__protector')));
     this.figure.appendChild(this.imageDiv);
-    this.figure.appendChild(createElement('label', object.caption, Attr('class', 'imageContainer__caption'), Attr('id', this.ariaLabel)));
+    this.figure.appendChild(createElement('label', object.caption, Attr('class', 'imageContainer__caption'), Attr('id', `${this.ariaLabel}-${object.data}`)));
     this.container.appendChild(this.figure);
   }
 
