@@ -62,8 +62,10 @@
     }
 
     &__finished {
+      height: $font-size-large;
       padding: 0 $gutter;
-      font-size: 32px;
+      margin: auto 0;
+      font-size: $font-size-large;
       font-weight: bold;
       color: $color-green-dark;
     }
